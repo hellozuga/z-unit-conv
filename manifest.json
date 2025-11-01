@@ -1,0 +1,11 @@
+{
+  "background_color": "#ffffff",
+  "dir": "ltr",
+  "display": "standalone",
+  "name": "z-unit-conv.vercel",
+  "orientation": "any",
+  "scope": "/",
+  "short_name": "z-unit-conv.vercel",
+  "start_url": "https://z-unit-conv.vercel.app/",
+  "theme_color": "#ffffff"
+}
