@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>z unit conv</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header-wrapper">
+            <h1>z unit conv</h1>
+            <button id="theme-toggle" class="theme-toggle" title="Toggle Dark Mode">●</button>
+        </div>
+        
+        <div class="selector-section">
+            <div class="icon-selector-grid">
+                <button class="icon-btn" data-conversion="mm-to-ft" title="Millimetres to Feet & Inches">
+                    <div class="icon">══</div>
+                    <div class="icon-label">mm</div>
+                </button>
+                <button class="icon-btn" data-conversion="m-to-ft" title="Metres to Feet & Inches">
+                    <div class="icon">│─</div>
+                    <div class="icon-label">m</div>
+                </button>
+                <button class="icon-btn" data-conversion="sq-mm-to-sq-ft" title="Square Millimetres to Square Feet">
+                    <div class="icon">▢</div>
+                    <div class="icon-label">mm²</div>
+                </button>
+                <button class="icon-btn" data-conversion="sq-m-to-sq-ft" title="Square Metres to Square Feet">
+                    <div class="icon">▦</div>
+                    <div class="icon-label">m²</div>
+                </button>
+            </div>
+            
+            <button id="reverse-btn" class="reverse-btn" style="display: none;">⇄ Reverse</button>
+        </div>
+        
+        <div id="converter-container" class="converter-container" style="display: none;">
+            <!-- MM to Feet/Inches -->
+            <div id="mm-to-ft-section" class="converter-section" style="display: none;">
+                <div class="converter-group">
+                    <div class="input-group">
+                        <label id="mm-label">Millimetres</label>
+                        <input type="number" id="mm-input" placeholder="0.00" step="any">
+                    </div>
+                    <div class="output-group">
+                        <label id="mm-output-label">Feet & Inches</label>
+                        <div class="output-wrapper">
+                            <div class="output" id="mm-output">—</div>
+                            <button class="copy-btn" data-target="mm-output">Copy</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Metres to Feet/Inches -->
+            <div id="m-to-ft-section" class="converter-section" style="display: none;">
+                <div class="converter-group">
+                    <div class="input-group">
+                        <label id="m-label">Metres</label>
+                        <input type="number" id="m-input" placeholder="0.00" step="any">
+                    </div>
+                    <div class="output-group">
+                        <label id="m-output-label">Feet & Inches</label>
+                        <div class="output-wrapper">
+                            <div class="output" id="m-output">—</div>
+                            <button class="copy-btn" data-target="m-output">Copy</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Feet/Inches to MM -->
+            <div id="ft-to-mm-section" class="converter-section" style="display: none;">
+                <div class="converter-group">
+                    <div class="input-group">
+                        <label id="ft-input-label">Feet</label>
+                        <input type="number" id="ft-input" placeholder="0" step="any">
+                    </div>
+                    <div class="input-group">
+                        <label id="inches-input-label">Inches</label>
+                        <input type="number" id="inches-input" placeholder="0.00" step="any">
+                    </div>
+                    <div class="output-group">
+                        <label id="ft-output-label">Millimetres</label>
+                        <div class="output-wrapper">
+                            <div class="output" id="ft-output">—</div>
+                            <button class="copy-btn" data-target="ft-output">Copy</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Feet/Inches to Metres -->
+            <div id="ft-to-m-section" class="converter-section" style="display: none;">
+                <div class="converter-group">
+                    <div class="input-group">
+                        <label id="ft-m-input-label">Feet</label>
+                        <input type="number" id="ft-m-input" placeholder="0" step="any">
+                    </div>
+                    <div class="input-group">
+                        <label id="inches-m-input-label">Inches</label>
+                        <input type="number" id="inches-m-input" placeholder="0.00" step="any">
+                    </div>
+                    <div class="output-group">
+                        <label id="ft-m-output-label">Metres</label>
+                        <div class="output-wrapper">
+                            <div class="output" id="ft-m-output">—</div>
+                            <button class="copy-btn" data-target="ft-m-output">Copy</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Square MM to Square Feet -->
+            <div id="sq-mm-to-sq-ft-section" class="converter-section" style="display: none;">
+                <div class="converter-group">
+                    <div class="input-group">
+                        <label id="sq-mm-label">Square Millimetres</label>
+                        <input type="number" id="sq-mm-input" placeholder="0.00" step="any">
+                    </div>
+                    <div class="output-group">
+                        <label id="sq-mm-output-label">Square Feet</label>
+                        <div class="output-wrapper">
+                            <div class="output" id="sq-mm-output">—</div>
+                            <button class="copy-btn" data-target="sq-mm-output">Copy</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Square Metres to Square Feet -->
+            <div id="sq-m-to-sq-ft-section" class="converter-section" style="display: none;">
+                <div class="converter-group">
+                    <div class="input-group">
+                        <label id="sq-m-label">Square Metres</label>
+                        <input type="number" id="sq-m-input" placeholder="0.00" step="any">
+                    </div>
+                    <div class="output-group">
+                        <label id="sq-m-output-label">Square Feet</label>
+                        <div class="output-wrapper">
+                            <div class="output" id="sq-m-output">—</div>
+                            <button class="copy-btn" data-target="sq-m-output">Copy</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Square Feet to Square MM -->
+            <div id="sq-ft-to-sq-mm-section" class="converter-section" style="display: none;">
+                <div class="converter-group">
+                    <div class="input-group">
+                        <label id="sq-ft-mm-label">Square Feet</label>
+                        <input type="number" id="sq-ft-mm-input" placeholder="0.00" step="any">
+                    </div>
+                    <div class="output-group">
+                        <label id="sq-ft-mm-output-label">Square Millimetres</label>
+                        <div class="output-wrapper">
+                            <div class="output" id="sq-ft-mm-output">—</div>
+                            <button class="copy-btn" data-target="sq-ft-mm-output">Copy</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Square Feet to Square Metres -->
+            <div id="sq-ft-to-sq-m-section" class="converter-section" style="display: none;">
+                <div class="converter-group">
+                    <div class="input-group">
+                        <label id="sq-ft-m-label">Square Feet</label>
+                        <input type="number" id="sq-ft-m-input" placeholder="0.00" step="any">
+                    </div>
+                    <div class="output-group">
+                        <label id="sq-ft-m-output-label">Square Metres</label>
+                        <div class="output-wrapper">
+                            <div class="output" id="sq-ft-m-output">—</div>
+                            <button class="copy-btn" data-target="sq-ft-m-output">Copy</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

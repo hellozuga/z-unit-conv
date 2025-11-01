@@ -1,0 +1,326 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-color: #ffffff;
+    --text-color: #000000;
+    --border-color: #000000;
+    --hover-bg: #000000;
+    --hover-text: #ffffff;
+}
+
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    padding: 10px;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+body.dark-mode {
+    --bg-color: #000000;
+    --text-color: #ffffff;
+    --border-color: #ffffff;
+    --hover-bg: #ffffff;
+    --hover-text: #000000;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.header-wrapper {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 20px;
+    font-weight: normal;
+    margin-bottom: 20px;
+    text-align: center;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 10px;
+}
+
+.theme-toggle {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 16px;
+    padding: 8px 12px;
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    cursor: pointer;
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 12px;
+}
+
+.theme-toggle:hover,
+.theme-toggle:focus,
+.theme-toggle:active {
+    background-color: var(--hover-bg);
+    color: var(--hover-text);
+}
+
+.selector-section {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid var(--border-color);
+}
+
+.icon-selector-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.icon-btn {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 14px;
+    padding: 15px;
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    cursor: pointer;
+    outline: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    transition: none;
+    min-height: 70px;
+}
+
+.icon-btn:hover,
+.icon-btn:focus {
+    background-color: var(--hover-bg);
+    color: var(--hover-text);
+}
+
+.icon-btn.active {
+    background-color: var(--hover-bg);
+    color: var(--hover-text);
+}
+
+.icon {
+    font-size: 24px;
+    line-height: 1;
+}
+
+.icon-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.reverse-btn {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 12px;
+    padding: 10px 20px;
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    width: 100%;
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.reverse-btn:hover,
+.reverse-btn:focus,
+.reverse-btn:active {
+    background-color: var(--hover-bg);
+    color: var(--hover-text);
+}
+
+.converter-container {
+    margin-top: 20px;
+}
+
+.converter-section {
+    margin-bottom: 20px;
+}
+
+.converter-group {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid var(--border-color);
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.output-group {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-size: 12px;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+input[type="number"] {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 16px;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    outline: none;
+    -webkit-appearance: none;
+    -moz-appearance: textfield;
+    width: 100%;
+}
+
+input[type="number"]:focus {
+    border: 2px solid var(--border-color);
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.output-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.output {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 14px;
+    padding: 8px;
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    min-height: 36px;
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.copy-btn {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 11px;
+    padding: 8px 12px;
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    white-space: nowrap;
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+    min-height: 36px;
+}
+
+.copy-btn:hover,
+.copy-btn:focus,
+.copy-btn:active {
+    background-color: var(--hover-bg);
+    color: var(--hover-text);
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 10px 5px;
+    }
+    
+    h1 {
+        font-size: 18px;
+        margin-bottom: 15px;
+        padding-bottom: 8px;
+        padding-right: 50px;
+    }
+    
+    .theme-toggle {
+        font-size: 11px;
+        padding: 6px 10px;
+    }
+    
+    .container {
+        max-width: 100%;
+    }
+    
+    .selector-section {
+        padding: 10px;
+        margin-bottom: 15px;
+    }
+    
+    .icon-selector-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+        margin-bottom: 12px;
+    }
+    
+    .icon-btn {
+        padding: 12px;
+        min-height: 60px;
+    }
+    
+    .icon {
+        font-size: 20px;
+    }
+    
+    .icon-label {
+        font-size: 10px;
+    }
+    
+    .converter-group {
+        grid-template-columns: 1fr;
+        padding: 12px;
+        gap: 12px;
+    }
+    
+    .output-wrapper {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 8px;
+    }
+    
+    .copy-btn {
+        width: 100%;
+    }
+    
+    input[type="number"] {
+        font-size: 16px;
+        padding: 12px;
+    }
+    
+    .output {
+        font-size: 14px;
+        padding: 12px;
+        min-height: 44px;
+    }
+    
+    label {
+        font-size: 11px;
+    }
+}
+
